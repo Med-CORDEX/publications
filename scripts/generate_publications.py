@@ -4,32 +4,33 @@ from collections import defaultdict
 
 # Constants for Zotero API
 GROUP_ID = "5816477"
-COLLECTION_KEY = "CVB532F5"
-API_BASE_URL = f"https://api.zotero.org/groups/{GROUP_ID}/collections/{COLLECTION_KEY}/items"
+COLLECTION_KEYS = ["CVB532F5", "DKDV3KN4"]
+API_URL_TEMPLATE = f"https://api.zotero.org/groups/{GROUP_ID}/collections/{{}}/items"
 HEADERS = {"Accept": "application/json"}
 
 OUTPUT_FILE = "docs/publications.html"
 
 def fetch_all_items():
     items = []
-    start = 0
-    limit = 100
 
-    while True:
-        response = requests.get(
-            API_BASE_URL,
-            headers=HEADERS,
-            params={"format": "json", "limit": limit, "start": start}
-        )
-        if response.status_code != 200:
-            raise Exception(f"Failed to fetch Zotero items: {response.status_code}")
+    for collection_key in COLLECTION_KEYS:
+        start = 0
+        limit = 100
+        while True:
+            response = requests.get(
+                API_URL_TEMPLATE.format(collection_key),
+                headers=HEADERS,
+                params={"format": "json", "limit": limit, "start": start}
+            )
+            if response.status_code != 200:
+                raise Exception(f"Failed to fetch Zotero items for collection {collection_key}: {response.status_code}")
 
-        page_items = response.json()
-        if not page_items:
-            break
+            page_items = response.json()
+            if not page_items:
+                break
 
-        items.extend(page_items)
-        start += len(page_items)
+            items.extend(page_items)
+            start += len(page_items)
 
     return items
 
