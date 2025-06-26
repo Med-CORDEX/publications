@@ -66,7 +66,7 @@ def generate_html(grouped_by_year):
   <span id="char-cap{year}" class="aprichiudi">
     <img alt="apri" src="https://www.medcordex.eu/charapri.jpg">
   </span>
-  {year}: {n_pub} publication
+  {year}: {n_pub} publication{'s' if n_pub != 1 else ''}
 </p>
 
 <div id="id-cap{year}" class="testocap">
@@ -152,7 +152,7 @@ header = '''<!DOCTYPE html>
 	    	  </li><li>
 	   <a href="https://www.medcordex.eu/medcordex_workshops.php">	    <span>workshops</span></a>
 	    	  </li><li class="lev1sel">
-	   <a href="https://www.medcordex.eu/publications.php">	    <span>publications</span></a>
+	   <a href="https://med-cordex.github.io/publications/publications.html">	    <span>publications</span></a>
 	    	  </li><li>
 	   <a href="https://www.medcordex.eu/references.php">	    <span>references</span></a>
 	    	  </li><li>
