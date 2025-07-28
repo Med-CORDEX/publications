@@ -46,7 +46,7 @@ def extract_metadata(item):
     publication = data.get("publicationTitle", data.get("journalAbbreviation", ""))
     year = data.get("date", "")[:4] if data.get("date") else "Unknown"
     doi = data.get("DOI", None)
-    url = f"[https://doi.org/{doi}](https://doi.org/{doi})" if doi else data.get("url", "")
+    url = f"https://doi.org/{doi}" if doi else data.get("url", "")
     return year, f'''
     <li>
       {authors}
