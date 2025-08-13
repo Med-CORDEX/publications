@@ -1,3 +1,4 @@
+import dateparser
 import os
 import requests
 from collections import defaultdict
@@ -9,6 +10,25 @@ API_URL_TEMPLATE = f"https://api.zotero.org/groups/{GROUP_ID}/collections/{{}}/i
 HEADERS = {"Accept": "application/json"}
 
 OUTPUT_FILE = "docs/publications.html"
+
+def remove_duplicate_items(items):
+    """
+    Remove duplicates based on DOI.
+    Items without a DOI are always included as unique.
+    """
+    seen_dois = set()
+    unique_items = []
+
+    for item in items:
+        doi = item.get("data", {}).get("DOI")
+        if doi:
+            if doi not in seen_dois:
+                seen_dois.add(doi)
+                unique_items.append(item)
+        else:
+            unique_items.append(item)
+
+    return unique_items
 
 def fetch_all_items():
     items = []
@@ -32,11 +52,23 @@ def fetch_all_items():
             items.extend(page_items)
             start += len(page_items)
 
-    return items
+    return remove_duplicate_items(items)
 
 def format_authors(creators):
     authors = [f"{c['lastName']}, {c['firstName'][0]}." for c in creators if c.get("creatorType") == "author" and c.get("lastName")]
     return ", ".join(authors)
+
+def extract_year(data):
+    """
+    Extracts the year from a Zotero 'date' field.
+    Returns 'Unknown' if the date is missing or cannot be parsed.
+    """
+    date_str = data.get("date")
+    if not date_str:
+        return "Unknown"
+    
+    parsed_date = dateparser.parse(date_str, settings={'PREFER_DAY_OF_MONTH': 'first'})
+    return parsed_date.year if parsed_date else "Unknown"
 
 def extract_metadata(item):
     data = item.get("data", {})
@@ -44,7 +76,7 @@ def extract_metadata(item):
     authors = format_authors(creators)
     title = data.get("title", "Untitled")
     publication = data.get("publicationTitle", data.get("journalAbbreviation", ""))
-    year = data.get("date", "")[:4] if data.get("date") else "Unknown"
+    year = extract_year(data)
     doi = data.get("DOI", None)
     url = f"https://doi.org/{doi}" if doi else data.get("url", "")
     return year, f'''
@@ -64,7 +96,7 @@ def generate_html(grouped_by_year):
         lines.append(f'''
 <p id="btn-cap{year}" class="capitolo">
   <span id="char-cap{year}" class="aprichiudi">
-    <img alt="apri" src="https://www.medcordex.eu/charapri.jpg">
+    <img alt="apri" src="charapri.jpg">
   </span>
   {year}: {n_pub} publication{'s' if n_pub != 1 else ''}
 </p>
@@ -84,18 +116,18 @@ header = '''<!DOCTYPE html>
 <html lang="en"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-   <script type="text/javascript" async="" src="https://www.medcordex.eu/js"></script>
+   <script type="text/javascript" async="" src="js"></script>
    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
-   <script src="https://www.medcordex.eu/js/jquery-1.7.1.min.js"></script>
-   <script src="https://www.medcordex.eu/js/js.js"></script>
+   <script src="js/jquery-1.7.1.min.js"></script>
+   <script src="js/js.js"></script>
 
-   <link href="https://www.medcordex.eu/css/style_css.css" rel="stylesheet" >
-   <link href="https://www.medcordex.eu/css/responsive.css" rel="stylesheet" >
-   <link href="https://www.medcordex.eu/css/flexslider.css" rel="stylesheet"  > 
-   <link href="https://www.medcordex.eu/css/css_default.css" rel="stylesheet"  > 
+   <link href="css/style_css.css" rel="stylesheet" >
+   <link href="css/responsive.css" rel="stylesheet" >
+   <link href="css/flexslider.css" rel="stylesheet"  > 
+   <link href="css/css_default.css" rel="stylesheet"  > 
    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
    <link href='https://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
-   <link href="https://www.medcordex.eu/css_printer.css"   type="text/css" rel="stylesheet" media="print">
+   <link href="css_printer.css"   type="text/css" rel="stylesheet" media="print">
     <title>Med-CORDEX</title>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -114,7 +146,7 @@ header = '''<!DOCTYPE html>
   <header>
 <div class="zzz">
 <div id="logo" class="sssssfloatleft">
-<a href="https://www.medcordex.eu/"><img class="centro" src="https://www.medcordex.eu/logo_medcordex_200.png" alt="medcordex logo" title="medcordex logo"></a> 
+<a href="https://www.medcordex.eu/"><img class="centro" src="logo_medcordex_200.png" alt="medcordex logo" title="medcordex logo"></a> 
 
 </div>
 </div>

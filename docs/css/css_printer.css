@@ -1,0 +1,61 @@
+#nostampa1 {display:none;}
+#nostampa2 {display:none;}
+#nostampa3 {display:none;}
+#nostampa4 {display:none;}
+#nostampa5 {display:none;}
+#nostampa6 {display:none;}
+#nostampa7 {display:none;}
+.equipaggio_incompleto {color:white; font-weight: normal;  text-align:left;	
+	margin-top: 0em;
+	margin-bottom: 0em;
+	border-top: 1px solid black;
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+	padding: 0em;
+}
+.autista_manca {color:white; font-weight: normal; text-align:left;	
+	margin-top: 0em;
+	margin-bottom: 0em;
+	border-top: 1px solid black;
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+	padding: 0em;
+}
+.medico_manca {color:white; font-weight: normal;  text-align:left;	
+	margin-top: 0em;
+	margin-bottom: 0em;
+	border-top: 1px solid black;
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+	padding: 0em;
+}
+
+/* da errore validazione css 
+@page {
+size: landscape;
+margin:0;
+}
+*/
+/*
+     FILE ARCHIVED ON 21:56:52 Jun 12, 2024 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 09:53:26 Aug 13, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.528
+  exclusion.robots: 0.021
+  exclusion.robots.policy: 0.009
+  esindex: 0.01
+  cdx.remote: 1475.045
+  LoadShardBlock: 341.737 (3)
+  PetaboxLoader3.datanode: 278.561 (4)
+  PetaboxLoader3.resolve: 192.472 (2)
+  load_resource: 172.963
+*/

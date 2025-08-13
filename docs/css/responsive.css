@@ -1,0 +1,230 @@
+
+body {
+color: black;font-size: 75%;font-family: Lucida Grande, Optima-Regular, Verdana, sans-serif;
+/*  background-image:url("/web/20240612215652im_/https://www.medcordex.eu/img/marble.jpg"); */
+  background-color:white;
+
+} 
+.z {display:none;} /* sui siti WEB NON viene visualizzata */
+.zz {display:block;} /* sui siti WEB viene visualizzata */
+#headerb {display:none;}
+#headerb2 {display:none;}
+#headerb3 {display:none;}
+#freccia1dx {display:none;}
+#freccia2dx {display:none;}
+#freccia1sx {display:none;}
+#freccia2sx {display:none;}
+#frecciab1dx {display:none;}
+#frecciab2dx {display:none;}
+#frecciab1sx {display:none;}
+#frecciab2sx {display:none;}
+#ddmain {margin-left:2em; margin-right:2em}
+.aprichiudi {display:none;}
+#id-capindice a {text-decoration:none;color:black;}
+#mainmenu2 {display:inline;}
+#mainmenu3 {display:inline;}
+.titolo {margin-left: 3em;color:black;background:inherit;font-weight: normal;text-align:left;}
+
+.sezione {margin-left: 6em;color:black;background:inherit;	text-align:left;}
+
+li {margin-bottom:0.5em;}
+#wrapper 		{width: 60%;margin: 0 auto; border-top: 2px solid gold;border-left: 2px solid gold;border-right: 2px solid gold;border-bottom: 2px solid gold;}
+#header 		{width: 100%;float:left;padding: 0px 0px 0px 0px;} 
+#header2 		{width: 100%;float:left;padding: 0px 0px 0px 0px;} 
+#header3 		{width: 100%;float:left;padding: 0px 0px 0px 0px;} 
+#headerb 		{width: 100%;float:left;padding: 0px 0px 0px 0px;} 
+#headerb2 		{width: 100%;float:left;padding: 0px 0px 0px 0px;} 
+#headerb3 		{width: 100%;float:left;padding: 20px 0px 0px 0px;} 
+#mainmenu		{width: 100%;float:left;}
+#mainmenu2		{width: 100%;float:left;}
+#mainmenu3		{width: 100%;float:left;}
+#mainmenub		{width: 100%;float:left;}
+#mainmenub2		{width: 100%;float:left;}
+#mainmenub3		{width: 100%;float:left;}
+#site-title  {display:block;}
+h1 {text-align:center;background-color:hinerit;font-size: 200%; color:red;}
+.capitolo               {ssbackground:rgba(58,77,35,0.16);margin-top:1em;padding:1em 0em 1em 0em;font-weight:bold;margin-bottom:-1.0em}	
+#site-title a  		{font-family: oswald; font-weight: 400; text-transform:none;center;color:red;}
+#site-title2  {display:none;}
+#site-title3  {display:none;}
+#main 			{width: 100%;float:left;padding: 0px 20px 0px 20px;}
+#content 		{width: 100%;float:left;margin-top:3em;} 
+#bottom 		{width: 100%;clear:both;padding-top:3em;} 
+#footer			{width: 100%;float:left;padding: 30px 20px 10px 20px;}
+#mainmenu		{display:block;}
+#btn-cap0 {text-align:center;margin-bottom:0.5em;}
+#btn-cap1 {text-align:center;margin-bottom:0.5em;}
+#btn-cap2 {text-align:center;margin-bottom:0.5em;}
+#btn-cap3 {text-align:center;margin-bottom:0.5em;}
+#btn-cap4 {text-align:center;margin-bottom:0.5em;}
+#btn-cap5 {text-align:center;margin-bottom:0.5em;}
+#btn-cap6 {text-align:center;margin-bottom:0.5em;}
+#btn-cap7 {text-align:center;margin-bottom:0.5em;}
+#btn-cap8 {text-align:center;margin-bottom:0.5em;}
+#btn-cap9 {text-align:center;margin-bottom:0.5em;}
+.t3 { border:1px black solid;}
+.t3 th {display:online;}
+.h {display:none;}
+.t3 td {text-align:right;padding-right:1em;padding-left:1em;}
+.numeri {wwwidth:5em;text-align:rigth;}
+#logo a img {src:"/logo_medcordex_200.png"}
+#logo a img {src:"/logo_medcordex_150.png";height:0;}
+@media (max-width: 767px) {
+    #logo a img {src:"/logo_medcordex_150.png"}
+    #logo a img {src:"/logo_medcordex_200.png"; height:0;}
+    
+    /* Structure  < 767 */
+    body {
+	color: black;font-family: Lucida Grande, Optima-Regular, Verdana, sans-serif;
+/*	background-color:#befca3;background-image:none;*/
+	background-color:white;background-image:none;
+    font-size:110%;
+    } 
+    
+    
+    #wrapper 		{width: 100%;margin: 0 auto;}
+    
+    /* Header */
+    .search{display:none;}
+    .btn-responsive-menu{display:block;}
+    .btn-responsive-menu2{display:block;}
+    .btn-responsive-menub{display:block;}
+    #mainmenu			{display:none;}
+    #mainmenu ul li 	{float: none;}	
+    #mainmenu2			{display:none;}
+    #mainmenu2 ul li 	{float: none;}	
+    #mainmenu3			{display:none;}
+    #mainmenu3 ul li 	{float: none;}	
+    #mainmenub			{display:none;}
+    #mainmenub ul li 	{float: none;}	
+    #mainmenub2			{display:none;}
+    #mainmenub2 ul li 	{float: none;}	
+    #mainmenub3			{display:none;}
+    #mainmenub3 ul li 	{float: none;}	
+    
+    #headerb {display:block; margin:0px;}
+    #headerb2 {display:block;}
+    #headerb3 {display:block;}
+    
+    #freccia1dx {display:block;}
+    #freccia2dx {display:block;}
+    #freccia1sx {display:block;}
+    #freccia2sx {display:block;}
+    #frecciab1dx {display:block;}
+    #frecciab2dx {display:block;}
+    #frecciab1sx {display:block;}
+    #frecciab2sx {display:block;}
+    /* Sidebar */
+    .widget{width:48%;float:left;}
+    .widget:first-child{margin-right:4%;!important}
+    
+    h1 			{font-size: 230%;margin:0px;}
+    .capitolo                      {background-color:wheat;margin-top:1em;padding:1em 1em 1em 1em;font-weight:normal;margin-bottom:2em;}	
+
+    #site-title   {font-size:30px;} 
+    #site-title a  		{font-family: oswald; font-weight: 400; text-transform:none;color:red;float:left;padding-left:1em;}
+    #site-title2  {display:inline;font-size:30px;}
+    #site-title3  {display:inline;font-size:30px;}
+    
+    #site-titleb  {font-size:30px}
+    #site-titleb a  		{font-family: oswald; font-weight: 400; text-transform:none;color:red;float:left;padding-left:1em;}
+    #site-titleb2 {font-size:30px;}
+    #site-titleb3 {font-size:30px;}
+    #footer p     {margin-left:10px;}
+    
+    
+    .testocap {display:none;}
+    li {margin-bottom:0.3em;}
+    #ddmain {margin-left:0px;}
+    .aprichiudi {display:inline;}
+    #btn-capindice {display:none;}
+    #id-capindice {display:none;}
+    .titolo {margin-left: 0em;color:green;background:inherit;		font-weight: normal;text-align:left;}
+    
+    .sezione {margin-left: 0em;color:blue;background:inherit;	text-align:left;}
+    .t3 td {display:block; width:100%; text-align:left;}
+    .numeri {display:block;}
+    .var {display:block; border-top:1px black solid;text-align:left;}
+    #contactpoints th {display:none;}
+/*    #contactpoints td {display:block;}*/
+    #steering th {display:none;}
+    #steering td {display:block;}
+    #news th {display:none;}
+    #news td {display:block;}
+    #content 		{margin-top:1em;} 
+    #mdcx1 {width:100%;}
+    th.vertext {height: 1em; white-space: nowrap;}
+    
+    th.vertext > div {
+	transform:     rotate(-90deg)   translate(-3em, 3.8em);width: 3em;height: 10em;text-align:center;}
+    th.vertext > div > span {width: 3em;}
+
+    #search_datasets th {text-align:left;}
+    #search_datasets td {display:block;text-align:left;font-weight:normal;}
+    #search_files th {text-align:left;}
+    #search_files td {display:block;text-align:left;font-weight:normal;}
+    #search_vars th {text-align:left;}
+    #search_vars td {display:block;text-align:left;font-weight:normal;}
+    #tab_search_datasets td {display:block;text-align:left;}
+    #tab_search_datasets th {display:none;}
+    #tab_search_files td {display:block;text-align:left;}
+    #tab_search_files th {display:none;}
+    #tab_search_vars td {display:block;text-align:left;}
+    #tab_search_vars th {display:none;}
+    #bottomnoi {display:none;}
+    p {margin-left:5px;}
+    .z {display:inline;} /* viene visualizzata sui telefonini */
+    .zz {display:none;}  /* NON viene visualizzata sui telefonini */
+/*    p {font-size:18px;}
+    div {font-size:18px;}
+*/
+#btn-cap0 {text-align:left;}
+#btn-cap1 {text-align:left;}
+#btn-cap2 {text-align:left;}
+#btn-cap3 {text-align:left;}
+#btn-cap4 {text-align:left;}
+#btn-cap5 {text-align:left;}
+#btn-cap6 {text-align:left;}
+#btn-cap7 {text-align:left;}
+#btn-cap8 {text-align:left;}
+#btn-cap9 {text-align:left;}
+.t3 th {display:none;}
+.h {display:inline;}
+
+input[type=submit]
+{
+margin-bottom: 20px;
+width:100%;
+padding: 1em;
+border-radius:5px;
+border:1px solid #7ac9b7;
+background-color: wheat;/*#4180C5;*/
+color: black;
+cursor:pointer;
+}
+
+@media (min-width: 1000px) {
+    #wrapper {width: 1000px;margin: 0 auto;}
+
+}
+
+/*
+     FILE ARCHIVED ON 21:56:52 Jun 12, 2024 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 09:53:19 Aug 13, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 1.601
+  exclusion.robots: 0.051
+  exclusion.robots.policy: 0.02
+  esindex: 0.032
+  cdx.remote: 1604.58
+  LoadShardBlock: 751.34 (3)
+  PetaboxLoader3.datanode: 374.497 (4)
+  PetaboxLoader3.resolve: 195.808 (2)
+  load_resource: 86.843
+*/

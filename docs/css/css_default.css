@@ -1,0 +1,175 @@
+
+* {text-align:left;font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;}
+#bottom {margin-top:0em;}
+.sinistra {text-align:left;}
+.t1 td,th {background:#FFFFCC;text-align:center;}
+#search_vars td   {vertical-align:top;
+text-align:left;
+border-top:  1px solid black;
+}
+#search_files td   {vertical-align:top;
+text-align:left;
+}
+.per {width:6em;}
+#tabvars td {white-space: nowrap; text-align:center;}
+#tabrisvars td,th {text-align:left;}
+.nowrap {white-space: nowrap;}
+.pct50 {width:50%;}
+.pct40 {width:40%;}
+.pct35 {width:35%;}
+.pct30 {width:30%;}
+.pct20 {width:20%;}
+.nodisplay {display:none;}
+/*.bg1 {background:#FFFFCC;}*/
+.bg1 {background:inherit;}
+.bg2 {background:#FFFF99;}
+.bg3 {background:#FFFF66;}
+.bgbianco {background:white;}
+.bggiallo {background:yellow;}
+.bgsilver {background:silver;}
+.bgverde {background:lime;}
+.bgrosso {background:red;}
+.bgarancio {background:orange;}
+.bgnero {background:black;}
+.floatright {float:right;}
+.floatleft {float:left;}
+.nofloat {clear:both;}
+.piccolo {font-size:80%;}
+.rossoscuro {color:#b60000;}
+.rosso {color:#b60000;}
+.rosso2 {color:red;}
+.nero {color:black;}
+.blue {color:blue;}
+.giallo {color:yellow;}
+.verde {color:lime;}
+.bianco {color:white;}
+.inputsubmit {background:yellow; color:red;}
+.nobr {white-space: nowrap}	
+.middle {vertical-align: middle;}
+.top {vertical-align: top;}
+.bottom {vertical-align: bottom;}
+.centro {text-align:center;}
+.destra {text-align:right;}
+.bold {font-weight: bold;}
+.indentato {margin-left:3em;}
+pre {margin-left:1em;}
+.noindentato {margin-left:0em;}
+hr .linea {border-top:  1px solid black;}
+.scatolina {margin-top: 0em;margin-bottom: 0em;border: 1px solid black;padding: 1em;}
+.selezionato {color:#b60000;white-space: nowrap;font-weight: bold;}
+.tab_centro { 
+margin-left: auto;
+margin-right: auto;
+}
+ol li {margin:0px;padding:0px;}
+ul li {margin:0px;padding:0px;}
+.newsdata {width:8em;}
+#tabellasimul td,th{
+       text-align:center;
+       vertical-align:middle;
+}
+#tabellasimul td {
+    height:2em;
+}
+.lgr {background-color:lime; width:3em;}
+.lgi {background-color:yellow; width:3em;}
+.lvi {background-color:pink; width:3em;}
+.lbi {background-color:white; width:3em;}
+.list {background-color:lightblue; text-align:center;font-weight: bold;}
+.lmod {background-color:lightblue; text-align:center;font-weight: bold;}
+.lres {background-color:lightblue; text-align:center;}
+#news td {
+       text-align:left;
+       vertical-align:top;
+
+}
+.t3 {/*width:100%; */ cellspacing:0px; cellpadding:0px;  
+border-collapse: collapse;   margin-left:auto; 
+    margin-right:auto;
+/*border: 1px solid black;*/
+}
+.t3 td  {  border: 1px solid black;}
+/*.t3 tr  {  border: 1px solid black;}*/
+.var {color:red;font-weight: bold;}
+.var2 {color:red;font-weight: bold;text-align:center;background-color:white;}
+.enne {text-align:rigth;}
+.summa  {text-align:rigth;}
+.numeri {font-family:Courier New; text-align:right;}
+
+
+#tab_search_datasets td {vertical-align:top;border-bottom: 1px solid black;}
+#tab_search_datasets tr {vertical-align:top;border-bottom: 1px solid black;}
+#t2 {background:yellow;text-align:center;font-weight: bold;}
+
+#t2 {width:100%}
+.pct50 {width:50%;}
+.nome {width:5em;}
+.doi {display:none;}
+.biblio li {margin-bottom:1em;list-style-type:none}
+.nostyle {list-style-type:none}
+.flag {text-align:left;}
+.t3 tbody tr:nth-child(odd) {background: #eee;}
+.t3 tbody tr:nth-child(even) {background: #fff;}
+
+#contactpoints tbody tr:nth-child(odd) {background: #eee;}
+#contactpoints tbody tr:nth-child(even) {background: #fff;}
+/* #contactpoints tbody td:nth-child(odd) {text-align:right;}*/
+#contactpoints tbody td:nth-child(even) {text-align:center;}
+
+#news tbody tr:nth-child(even) {background: #eee;}
+#news tbody tr:nth-child(odd) {background: #fff;}
+/* #news tbody td:nth-child(odd) {text-align:right;}*/
+#news tbody td:nth-child(even) {text-align:center;}
+
+#usage1 tbody tr:nth-child(odd) {background: #eee;}
+#usage1 tbody tr:nth-child(even) {background: #fff;}
+#tab_search_datasets tbody tr:nth-child(odd) {background: #eee;}
+#tab_search_datasets tbody tr:nth-child(even) {background: #fff;}
+#tab_search_files tbody tr:nth-child(odd) {background: #eee;}
+#tab_search_files tbody tr:nth-child(even) {background: #fff;}
+#tab_search_vars tbody tr:nth-child(odd) {background: #eee;}
+#tab_search_vars tbody tr:nth-child(even) {background: #fff;}
+#tab_ftp_stats tbody tr:nth-child(odd) {background: #eee;}
+#tab_ftp_stats tbody tr:nth-child(even) {background: #fff;}
+/*
+tbody tr:nth-child(odd) {background: #eee;}
+tbody tr:nth-child(even) {background: #fff;}
+*/
+#usage1 td {text-align:center;}
+#usage1 th {text-align:center;}
+.nomargin {margin:0px;}
+.zz {background: white;width:100%}
+.tabellona2 td{
+border:1pt solid black;
+}
+#everyorganizations {width:80%;border:1pt solid black;}
+#everyorganizations td {text-align:center;}
+#everyorganizations tbody tr:nth-child(odd) {background: #eee;}
+#everyorganizations tbody tr:nth-child(even) {background: #fff;}
+.c0 {color:red;}
+.c1 {color:blue;}
+.c00 {text-align:center;}
+.tab_centra{margin-left:auto; margin-right:auto;}
+
+
+
+/*
+     FILE ARCHIVED ON 21:56:53 Jun 12, 2024 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 09:53:20 Aug 13, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 5.582
+  exclusion.robots: 0.085
+  exclusion.robots.policy: 0.035
+  esindex: 0.044
+  cdx.remote: 2448.281
+  LoadShardBlock: 277.075 (3)
+  PetaboxLoader3.datanode: 169.211 (4)
+  PetaboxLoader3.resolve: 144.913 (2)
+  load_resource: 93.316
+*/
