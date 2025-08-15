@@ -2,6 +2,7 @@ import dateparser
 import os
 import requests
 from collections import defaultdict
+from datetime import datetime, timezone
 
 # Constants for Zotero API
 GROUP_ID = "5816477"
@@ -56,6 +57,8 @@ def fetch_all_items():
 
 def format_authors(creators):
     authors = [f"{c['lastName']}, {c['firstName'][0]}." for c in creators if c.get("creatorType") == "author" and c.get("lastName")]
+    if not authors:
+        authors = [f"{c['lastName']}, {c['firstName'][0]}." for c in creators if c.get("creatorType") == "editor" and c.get("lastName")]
     return ", ".join(authors)
 
 def extract_year(data):
@@ -67,8 +70,16 @@ def extract_year(data):
     if not date_str:
         return "Unknown"
     
-    parsed_date = dateparser.parse(date_str, settings={'PREFER_DAY_OF_MONTH': 'first'})
-    return parsed_date.year if parsed_date else "Unknown"
+    parsed_date = dateparser.parse(
+        date_str,
+        settings = {
+            'PREFER_DAY_OF_MONTH': 'first',
+            'RELATIVE_BASE': datetime(1900, 1, 1, tzinfo=timezone.utc), 
+            'TIMEZONE': 'UTC',  
+            'TO_TIMEZONE': 'UTC'
+        }
+    )
+    return str(parsed_date.year) if parsed_date else "Unknown"
 
 def extract_metadata(item):
     data = item.get("data", {})
@@ -79,6 +90,8 @@ def extract_metadata(item):
     year = extract_year(data)
     doi = data.get("DOI", None)
     url = f"https://doi.org/{doi}" if doi else data.get("url", "")
+    if year == 'Unknown':
+        print(item)
     return year, f'''
     <li>
       {authors}
@@ -112,7 +125,8 @@ def generate_html(grouped_by_year):
         ''')
     return "\n".join(lines)
 
-header = '''<!DOCTYPE html>
+def header(total_pub): 
+    return '''<!DOCTYPE html>
 <html lang="en"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -200,14 +214,15 @@ header = '''<!DOCTYPE html>
 <h1 id="site-title2">publications</h1><br><div id="ddmain">
 <div id="content">
 
-<p>If you plan to submit publications using Med-CORDEX simulations, please refer it with a simple sentence in the Acknowledgment: <em>"This work is part of the Med-CORDEX initiative (www.medcordex.eu) supported by the HyMeX programme (www.hymex.org)" </em>
+<p>If you plan to submit publications using Med-CORDEX simulations, please refer it with a simple sentence in the Acknowledgment: <em>"This work is part of the Med-CORDEX initiative (www.medcordex.eu)" </em>
  or  <em>"The simulations used in this work were downloaded from the Med-CORDEX database (www.medcordex.eu)"</em>.
 <br>We strongly encourage people downloading data from the Med-CORDEX 
 database to contact the model data producers in order to give feedbacks 
 on the model simulations, interact on the scientific studies and/or 
 propose co-authorships.
 </p>
-<h1>Publications based on Med-CORDEX simulations</h1>
+''' + f'''
+<h1>Publications based on Med-CORDEX simulations (total: {total_pub})</h1>
 '''
 
 footer = '''
@@ -236,7 +251,7 @@ def main():
         except Exception as e:
             print(f"Skipping item due to error: {e}")
 
-    html = header + generate_html(publications_by_year) + footer
+    html = header(total_pub = len(items)) + generate_html(publications_by_year) + footer
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(html)
